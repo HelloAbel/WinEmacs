@@ -5,6 +5,11 @@
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
 (package-initialize)
+;; 将包管理器的源换成清华大学的镜像
+(require 'package)
+(add-to-list 'package-archives '("marmalade" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/marmalade/") t)
+(add-to-list 'package-archives '("elpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/") t)
+(add-to-list 'package-archives '("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/") t)
 
 (require 'cl)
 
@@ -22,6 +27,9 @@
                        doom-modeline
                        doom-themes
                        irony
+                       grip-mode
+                       treemacs
+                       markdown-mode
                        ) "Default Packages")
 (setq package-selected-packages xzh/packages)
 
@@ -91,12 +99,6 @@ show-paren-style 'parenthesis)
   (set-fontset-font (frame-parameter nil 'font)
             charset
             (font-spec :family "Microsoft Yahei UI" :size 16)))
-
-;; 将包管理器的源换成清华大学的镜像
-(require 'package)
-(add-to-list 'package-archives '("marmalade" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/marmalade/") t)
-(add-to-list 'package-archives '("elpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/") t)
-(add-to-list 'package-archives '("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/") t)
 
 (package-initialize)
 
